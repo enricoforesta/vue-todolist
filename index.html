@@ -18,7 +18,7 @@
     <header class="py-4">
         <h1 class="text-center">TO DO LIST</h1>
     </header>
-    <main>
+    <main id="app">
         <div class="mx-auto col col-md-8">
             <label for="add-todo">Inserisci cose da fare</label>
             <div class="input-group mb-3">
@@ -26,11 +26,7 @@
                 <button class="btn btn-warning" type="button" id="button-addon2">Button</button>
             </div>
             <ul class="list-group">
-                <li class="list-group-item">An item</li>
-                <li class="list-group-item">A second item</li>
-                <li class="list-group-item">A third item</li>
-                <li class="list-group-item">A fourth item</li>
-                <li class="list-group-item">And a fifth one</li>
+                <li class="list-group-item" v-for="(todo,i) in todos" :class="{underline: todo.done === true}">{{todo.text}}</li>
             </ul>
         </div>
     </main>
