@@ -12,7 +12,7 @@ const myApp = createApp({
                     done: true
                 }, {
                     text: "Pulire casa",
-                    done: true
+                    done: false
                 }, {
                     text: "Studiare",
                     done: true
@@ -39,7 +39,8 @@ const myApp = createApp({
             else{
                 this.todos[i].done = true
             }
-        }
+        },
+
     }
 });
 myApp.mount("#app")

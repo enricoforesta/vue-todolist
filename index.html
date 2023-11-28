@@ -13,8 +13,7 @@
     <!-- /MY CSS -->
     <title>Vue To Do List</title>
 </head>
-
-<body>
+<body data-bs-theme="dark">
     <header class="py-4">
         <h1 class="text-center">TO DO LIST</h1>
     </header>
@@ -22,11 +21,13 @@
         <div class="mx-auto col col-md-8">
             <label class="mb-2 ms-2" for="text-todo">Inserisci cose da fare:</label>
             <div class="input-group mb-3">
-                <input id="text-todo" type="text" class="form-control" placeholder="Inserisci testo" v-model="addTodos" @keyup.enter="addTodo">
+                <input id="text-todo" type="text" class="form-control" placeholder="Inserisci testo" v-model="addTodos"
+                    @keyup.enter="addTodo">
                 <button class="btn btn-warning" type="button" id="add-todo" @click="addTodo">Add</button>
             </div>
-            <ul class="list-group">
-                <li class="list-group-item d-flex justify-content-between" v-for="(todo,i) in todos">
+            <div v-if="todos.length === 0" class="alert alert-warning">Bravo, non hai nulla da fare, vai a mangiare il gelato</div>
+            <ul v-else class="list-group">
+                <li  class="list-group-item d-flex justify-content-between" v-for="(todo,i) in todos">
                     <div :class="{underline: todo.done === true}" @click="invert(i)" role="button">{{todo.text}}</div>
                     <div role="button" @click="deleteTodo(i)">X</div>
                 </li>
