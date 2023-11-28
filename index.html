@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- BOOTSTRAP -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <!-- /BOOTSTRAP -->
+    <!-- MY CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- /MY CSS -->
+    <title>Vue To Do List</title>
+</head>
+
+<body>
+    <header class="py-4">
+        <h1 class="text-center">TO DO LIST</h1>
+    </header>
+    <main>
+        <div class="mx-auto col col-md-8">
+            <label for="add-todo">Inserisci cose da fare</label>
+            <div class="input-group mb-3">
+                <input id="add-todo" type="text" class="form-control" placeholder="Inserisci testo">
+                <button class="btn btn-warning" type="button" id="button-addon2">Button</button>
+            </div>
+            <ul class="list-group">
+                <li class="list-group-item">An item</li>
+                <li class="list-group-item">A second item</li>
+                <li class="list-group-item">A third item</li>
+                <li class="list-group-item">A fourth item</li>
+                <li class="list-group-item">And a fifth one</li>
+            </ul>
+        </div>
+    </main>
+    <footer></footer>
+    <!-- VUE JS -->
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <!-- /VUE JS -->
+    <!-- MY JS -->
+    <script src="js/main.js"></script>
+    <!-- /MY JS -->
+</body>
+
+</html>
