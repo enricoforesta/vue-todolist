@@ -20,13 +20,16 @@
     </header>
     <main id="app">
         <div class="mx-auto col col-md-8">
-            <label for="add-todo">Inserisci cose da fare</label>
+            <label class="mb-2 ms-2" for="text-todo">Inserisci cose da fare:</label>
             <div class="input-group mb-3">
-                <input id="add-todo" type="text" class="form-control" placeholder="Inserisci testo">
-                <button class="btn btn-warning" type="button" id="button-addon2">Button</button>
+                <input id="text-todo" type="text" class="form-control" placeholder="Inserisci testo" v-model="addTodos" @keyup.enter="addTodo">
+                <button class="btn btn-warning" type="button" id="add-todo" @click="addTodo">Add</button>
             </div>
             <ul class="list-group">
-                <li class="list-group-item" v-for="(todo,i) in todos" :class="{underline: todo.done === true}">{{todo.text}}</li>
+                <li class="list-group-item d-flex justify-content-between" v-for="(todo,i) in todos">
+                    <div :class="{underline: todo.done === true}" @click="invert(i)" role="button">{{todo.text}}</div>
+                    <div role="button" @click="deleteTodo(i)">X</div>
+                </li>
             </ul>
         </div>
     </main>

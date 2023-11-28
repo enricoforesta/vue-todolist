@@ -23,3 +23,17 @@ Predisporre un campo di input testuale e un pulsante "aggiungi": cliccando sul p
 
 2. Nel Js creiamo un array di oggetti dove inseriamo i nostri TO DO.
 
+3. Con un ciclo For creiamo gli elementi. e come condizione aggiungiamo una classe che      sbarra il testo in vase al valore nell array di oggetti.
+
+4. Affianco l item aggiugiamo una "x" che tratteremo come un bottone, e al suo click, l item verra eliminato.
+
+5. Al bottone dell html, aggiugniamo un evento @click e v-model di un propietà vuota, e passiamo una funzione, dove pushiamo un oggetto, con testo la propietà del v-model e con "done: false" di default.
+
+# Bonus 1 
+
+1. Aggiungere "@keyup.enter="addTodo" nell input dell html.
+
+# Bonus 2
+1. Aggiungere un evento click, sull item.
+
+2. Creare una funzione che se il valore è "true" inverte in "false", e viceversa.
