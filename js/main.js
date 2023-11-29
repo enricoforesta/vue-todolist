@@ -21,9 +21,11 @@ const myApp = createApp({
         }
     },
     methods: {
+        // Funzione per eliminare item
         deleteTodo(i) {
             this.todos.splice(i, 1);
         },
+        // Funzione per aggiungere item
         addTodo() {
             console.log("ho cliccato add");
             if (this.addTodos.trim() !== "") {
@@ -31,14 +33,10 @@ const myApp = createApp({
                 this.addTodos = "";
             }
         },
-        invert(i){
+        // Funzione per invertire il valore di item
+        invert(i) {
             console.log("ho cliccato i")
-            if(this.todos[i].done === true){
-                this.todos[i].done = false
-            }
-            else{
-                this.todos[i].done = true
-            }
+            this.todos[i].done = !this.todos[i].done;
         },
 
     }

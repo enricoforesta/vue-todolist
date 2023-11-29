@@ -13,25 +13,34 @@
     <!-- /MY CSS -->
     <title>Vue To Do List</title>
 </head>
+
 <body data-bs-theme="dark">
+    <!-- HEADER -->
     <header class="py-4">
         <h1 class="text-center">TO DO LIST</h1>
     </header>
+    <!-- /HEADER -->
     <main id="app">
+
         <div class="mx-auto col col-md-8">
+            <!-- ADD TASK -->
             <label class="mb-2 ms-2" for="text-todo">Inserisci cose da fare:</label>
             <div class="input-group mb-3">
                 <input id="text-todo" type="text" class="form-control" placeholder="Inserisci testo" v-model="addTodos"
                     @keyup.enter="addTodo">
                 <button class="btn btn-warning" type="button" id="add-todo" @click="addTodo">Add</button>
             </div>
-            <div v-if="todos.length === 0" class="alert alert-warning">Bravo, non hai nulla da fare, vai a mangiare il gelato</div>
+            <!-- /ADD TASK -->
+            <div v-if="todos.length === 0" class="alert alert-warning">Bravo, non hai nulla da fare, vai a mangiare il
+                gelato</div>
+            <!-- LISTA TASK -->
             <ul v-else class="list-group">
-                <li  class="list-group-item d-flex justify-content-between" v-for="(todo,i) in todos">
-                    <div :class="{underline: todo.done === true}" @click="invert(i)" role="button">{{todo.text}}</div>
-                    <div role="button" @click="deleteTodo(i)">X</div>
+                <li class="list-group-item d-flex justify-content-between" @click="invert(i)" v-for="(todo,i) in todos">
+                    <div :class="{underline: todo.done}" role="button">- {{todo.text}}</div>
+                    <div role="button" @click.stop="deleteTodo(i)">X</div>
                 </li>
             </ul>
+            <!-- /LISTA TASK -->
         </div>
     </main>
     <footer></footer>
